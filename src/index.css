@@ -43,11 +43,55 @@ body {
   background: #ffffff;
   border-radius: 16px;
   padding: 28px;
-  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  position: relative;
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(#ffffff, #ffffff),
+    linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+  background-size:
+    auto,
+    300% 100%;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation:
+    borderChase 4s linear infinite,
+    shadowChase 4s linear infinite;
+}
+
+@keyframes borderChase {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 300% 0%;
+  }
+}
+
+@keyframes shadowChase {
+  0% {
+    box-shadow:
+      0 8px 25px rgba(59, 130, 246, 0.25),
+      0 0 40px rgba(59, 130, 246, 0.15);
+  }
+  33% {
+    box-shadow:
+      0 12px 35px rgba(139, 92, 246, 0.3),
+      0 0 50px rgba(139, 92, 246, 0.2);
+  }
+  66% {
+    box-shadow:
+      0 12px 35px rgba(236, 72, 153, 0.3),
+      0 0 50px rgba(236, 72, 153, 0.2);
+  }
+  100% {
+    box-shadow:
+      0 8px 25px rgba(59, 130, 246, 0.25),
+      0 0 40px rgba(59, 130, 246, 0.15);
+  }
 }
 
 .avatar {
